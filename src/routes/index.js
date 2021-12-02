@@ -19,7 +19,7 @@ import AddUser from "../pages/Users/AddUser";
 import Users from "../pages/Users/UserListing";
 import CMS from "../pages/CMS";
 import ViewUser from "../pages/Users/ViewUser";
-import DeliveryPerson from "../pages/DeliveryPerson/Listing";
+
 
 
 
@@ -27,7 +27,7 @@ const authProtectedRoutes = [
 
 	{ path: "/dashboard", component: Dashboard },
 	{ path: "/users", component: Users },
-	{ path: "/deliveryPersons", component: DeliveryPerson },
+	{ path: "/deliveryPersons", component: Users },
 	{ path: "/addUser", component: AddUser },
 	{ path: "/cms", component: CMS },
 	{ path: "/viewUser/:id", component: ViewUser },

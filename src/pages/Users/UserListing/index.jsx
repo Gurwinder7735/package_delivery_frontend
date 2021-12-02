@@ -18,14 +18,15 @@ import { useHistory } from "react-router";
 
 const Users = () => {
 
-  const currentModule = 'users';
-  const role = '1';
+
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const history = useHistory();
+  
  
+  const currentModule = 'users';
+  const role = history.location.pathname.includes('users')? '1' : '2'
 
-  // console.log('history',history)
 
 
   const [deletePopup, setDeletePopup] = useState(false);
@@ -33,7 +34,10 @@ const Users = () => {
   const [filterText, setFilterText] = useState("");
   const [currentPage, setcurrentPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
-
+  
+  useEffect(()=>{
+   console.log('ROLE',role);
+  })
 
   // PAGINATION
   const handlePageChange = (page) => {
@@ -95,9 +99,9 @@ const Users = () => {
   useEffect(() => {
 
     if (filterText) {
-      dispatch(getListing(currentModule, 1, perPage, filterText, 1));
+      dispatch(getListing(currentModule, 1, perPage, filterText, role));
     } else {
-      dispatch(getListing(currentModule, 1, perPage,'',1));
+      dispatch(getListing(currentModule, 1, perPage,'',role));
     }
 
     
