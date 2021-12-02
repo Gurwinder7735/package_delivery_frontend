@@ -28,7 +28,7 @@ import "./App.css";
 if (process.env.NODE_ENV == "development") {
   axios.defaults.baseURL = "http://localhost:5000/";
 } else {
-  axios.defaults.baseURL = "https://mern-admin-backend.herokuapp.com/";
+  axios.defaults.baseURL = "https://packagedelivery123.herokuapp.com/";
 }
 
 // test
