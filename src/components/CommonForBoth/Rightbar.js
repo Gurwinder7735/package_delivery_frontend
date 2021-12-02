@@ -122,7 +122,7 @@ class RightSidebar extends Component {
               <hr className="my-0" />
 
               <div className="p-4">
-                <div className="radio-toolbar">
+                {/* <div className="radio-toolbar">
                   <span className="mb-2 d-block">Layouts</span>
                   <Input
                     type="radio"
@@ -141,7 +141,7 @@ class RightSidebar extends Component {
                     checked={this.state.layoutType === "horizontal"}
                     onChange={this.changeLayout} />
                   <Label htmlFor="radioHorizontal">Horizontal</Label>
-                </div>
+                </div> */}
 
                 <hr className="mt-1" />
 
@@ -268,18 +268,18 @@ class RightSidebar extends Component {
 
                 <FormGroup>
 
-                  <span className="mb-2 d-block" id="radio-title">Preloader</span>
+                  {/* <span className="mb-2 d-block" id="radio-title">Preloader</span> */}
 
-                  <div className="form-check form-switch mb-3">
+                  {/* <div className="form-check form-switch mb-3">
                     <Input type="checkbox" className="form-check-input theme-choice" id="checkbox_1"
                       checked={this.props.isPreloader}
                       onChange={this.changeThemePreloader} />
                     <Label className="form-check-label" htmlFor="checkbox_1">Preloader</Label>
-                  </div>
+                  </div> */}
 
                 </FormGroup>
 
-                <h6 className="text-center">Choose Layouts</h6>
+                {/* <h6 className="text-center">Choose Layouts</h6>
 
                 <div className="mb-2">
                   <Link to="#" target="_blank">
@@ -323,7 +323,7 @@ class RightSidebar extends Component {
                   target="_blank"
                 >
                   <i className="mdi mdi-cart me-1"></i> Purchase Now
-                </Link>
+                </Link> */}
               </div>
 
             </div>

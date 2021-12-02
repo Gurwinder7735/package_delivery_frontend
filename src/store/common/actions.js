@@ -84,11 +84,11 @@ export const updateItem = (moduleName, id, data, clearInputs) => {
   };
 };
 
-export const getListing = (moduleName, page, perPage, filterText = '') => {
+export const getListing = (moduleName, page, perPage, filterText = '',role) => {
   return (dispatch) => {
     dispatch(setLoading(true));
     axios
-      .get(`api/${moduleName}?page=${page}&perPage=${perPage}&search=${filterText}`)
+      .get(`api/${moduleName}?page=${page}&perPage=${perPage}&search=${filterText}&role=${role}`)
       .then((res) => {
         dispatch(setListing(res.data.body));
         dispatch(setLoading(false));
@@ -102,6 +102,23 @@ export const getListing = (moduleName, page, perPage, filterText = '') => {
   };
 };
 
+export const getItem = (moduleName, id) => {
+  return (dispatch) => {
+    // dispatch(setLoading(true));
+    axios
+      .get(`api/${moduleName}/${id}`)
+      .then((res) => {
+        dispatch(setItem(res.data.body));
+        // dispatch(setLoading(false));
+        console.log("RES", res);
+      })
+      .catch((err) => {
+        // dispatch(setLoading(false));
+        dispatch(setError(err.response.data.message));
+        console.log(err);
+      });
+  };
+};
 
 export const changeStatus = (moduleName,id, status) => {
 
@@ -127,7 +144,7 @@ export const changeStatus = (moduleName,id, status) => {
   };
 };
 
-export const deleteItem = (moduleName,id, setDeletePopup, currentPage, perPage) => {
+export const deleteItem = (moduleName,id, setDeletePopup, currentPage, perPage,role) => {
   return (dispatch) => {
     dispatch(clearAlerts());
     dispatch(setLoading(true));
@@ -136,7 +153,7 @@ export const deleteItem = (moduleName,id, setDeletePopup, currentPage, perPage) 
       .then((res) => {
         console.log("RES",res)
         dispatch(setSuccess(res.data.message));
-        dispatch(getListing(moduleName,currentPage,perPage));
+        dispatch(getListing(moduleName,currentPage,perPage,'',role));
         setDeletePopup();
       })
       .catch((err) => {

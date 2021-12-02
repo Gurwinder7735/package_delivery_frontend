@@ -8,7 +8,7 @@ import AddUser from "../AddUser";
 import Breadcrumbs from "../../../components/Common/Breadcrumb";
 import FilterComponent from "../../../components/DataTables/FilterComponent";
 import CustomLoader from "../../../components/DataTables/CustomLoader";
-import UserColumns from "./UserColumns";
+import UserColumns from "./Columns";
 import ConfirmDelete from "../../../components/DataTables/ConfirmDelete";
 import {
   changeStatus, deleteItem, getListing, setItem, toggleModal,
@@ -16,10 +16,10 @@ import {
 } from "../../../store/common/actions";
 import { useHistory } from "react-router";
 
-const Users = () => {
+const DeliveryPerson = () => {
 
   const currentModule = 'users';
-  const role = '1';
+  const role = '2';
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const history = useHistory();
@@ -95,9 +95,9 @@ const Users = () => {
   useEffect(() => {
 
     if (filterText) {
-      dispatch(getListing(currentModule, 1, perPage, filterText, 1));
+      dispatch(getListing(currentModule, 1, perPage, filterText, role));
     } else {
-      dispatch(getListing(currentModule, 1, perPage,'',1));
+      dispatch(getListing(currentModule, 1, perPage,'',role));
     }
 
     
@@ -136,4 +136,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default DeliveryPerson;
