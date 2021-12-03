@@ -19,7 +19,7 @@ export const getCMS = (type) => {
       .catch((err) => {
           dispatch(setError(err.response.data.message));
         console.log(err);
-      });
+      }); 
   };
   
 };

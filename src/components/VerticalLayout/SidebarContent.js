@@ -121,6 +121,24 @@ class SidebarContent extends Component {
                 </li>
               </ul>
             </li>
+
+            
+            <li>
+              <Link to="/posts" className="waves-effect">
+                <i className="ri-dashboard-line"></i>
+                <span className="badge rounded-pill bg-success float-end"></span>
+                <span className="ms-1">{this.props.t("Posts")}</span>
+              </Link>
+            </li>
+
+              <li>
+              <Link to="/bids" className="waves-effect">
+                <i className="ri-dashboard-line"></i>
+                <span className="badge rounded-pill bg-success float-end"></span>
+                <span className="ms-1">{this.props.t("Bids")}</span>
+              </Link>
+            </li>
+
             
             <li className="menu-title">{this.props.t("CMS")}</li>
 

@@ -19,9 +19,10 @@ import AddUser from "../pages/Users/AddUser";
 import Users from "../pages/Users/UserListing";
 import CMS from "../pages/CMS";
 import ViewUser from "../pages/Users/ViewUser";
-
-
-
+import Bids from "../pages/Bids/Listing";
+import Posts from "../pages/Posts/Listing";
+import ViewPost from "../pages/Posts/ViewPost";
+import ViewBid from "../pages/Bids/ViewBid";
 
 const authProtectedRoutes = [
 
@@ -31,7 +32,10 @@ const authProtectedRoutes = [
 	{ path: "/addUser", component: AddUser },
 	{ path: "/cms", component: CMS },
 	{ path: "/viewUser/:id", component: ViewUser },
-	
+	{ path: "/bids", component: Bids },
+	{ path: "/viewBid/:id", component: ViewBid },
+	{ path: "/posts", component: Posts },
+	{ path: "/viewPost/:id", component: ViewPost },
 	// this route should be at the end of all other routes
 	{ path: "/", exact: true, component: () => <Redirect to="/dashboard" /> },
 	
